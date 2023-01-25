@@ -2,6 +2,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './Home'
+import PageTwo from './PageTwo'
+import PageThree from './PageThree'
 
 const Stack = createStackNavigator();
 
@@ -17,7 +19,26 @@ const CypherStack = () => {
           headerStyle: { backgroundColor: 'gold' },
         })}
       />
+      <Stack.Screen
+        name="PageTwo"
+        component={PageTwo}
+        options={({navigation}) => ({
+          headerTintColor: 'white',
+          headerStyle: { backgroundColor: 'gold' },
+        })}
+      />
+
+      <Stack.Screen
+        name="PageThree"
+        component={PageThree}
+        options={({navigation}) => ({
+          headerTintColor: 'white',
+          headerStyle: { backgroundColor: 'gold' },
+        })}
+      />
     </Stack.Navigator>
+    
+    
   )
 }
 

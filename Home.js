@@ -1,14 +1,34 @@
 import React from 'react';
-import { StyleSheet, View, Text, StatusBar, Image } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, Image ,Button,Alert} from 'react-native';
 
 export default function Home ({navigation}) {
     return(
         <View style={styles.container}>
-            <Image source={require('./assets/home-banner.png')} style={styles.bannerImage}></Image>
+            
             <View style={styles.content}>
-                <Text style={styles.mainText}>Open up Home.js to start working!</Text>
-                <Text style={styles.helpText}>All the libraries and assets required are available in the app directory.</Text>
-                <Text style={styles.hintText}>Hint: Make use of stack navigation in App.js to navigate between screens!</Text>
+                 
+                <Text style={styles.mainText}>Get the world's first non-custodial cypher card</Text>
+                <Text style={styles.helpText}>Explore all of web3 in one place.</Text>
+                <Text style={styles.text}>
+                <Image source={require('./assets/swap.png')} style={styles.Swap}></Image>
+                Swap to get instant USD
+                </Text>
+                <Text style={styles.text}>
+                <Image source={require('./assets/buy.png')} style={styles.Swap}></Image>
+                Buy at an affordable price
+                </Text>
+                <Text style={styles.text}>
+                <Image source={require('./assets/chain.png')} style={styles.Swap}></Image>
+                9 chains supported- more coming soon    
+                </Text>
+                <Text style={styles.text}>
+                <Image source={require('./assets/browser.png')} style={styles.Swap}></Image>
+                Accepted all over the world!!
+                </Text>
+                <Button title="Click Here" onPress={() => navigation.navigate('PageTwo', { name: 'Page Two' })}/>
+                
+
+                
             </View>
             <StatusBar style="auto" />
         </View>
@@ -22,10 +42,20 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
     },
-    bannerImage: {
-      width: '100%',
-      height: '20%',
-      resizeMode: 'contain'
+    Swap: {
+      width: 50,
+    height: 50,
+    borderRadius: 150 / 2,
+    overflow: "hidden",
+    borderWidth: 3,
+    borderColor: "grey"
+      
+    },
+    text: {
+      flex: 1,
+      justifyContent: 'left',
+      alignItems: 'left',
+      alignSelf: 'left'
     },
     content: {
       flex: 1,
@@ -36,7 +66,7 @@ const styles = StyleSheet.create({
     mainText: {
       fontSize: 20,
       fontWeight: 'bold',
-      textAlign: 'center'
+      
     },
     helpText: {
       fontSize: 16,
